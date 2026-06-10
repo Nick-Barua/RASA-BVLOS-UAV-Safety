@@ -1,22 +1,22 @@
 # Risk-Aware AI Architecture for BVLOS UAV Safety (RASA)
 
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
-![Journal](https://img.shields.io/badge/Journal-MDPI%20Vehicles-green)
-![DOI](https://img.shields.io/badge/DOI-Pending-lightgrey)
-![Affiliation](https://img.shields.io/badge/Affiliation-Shiga%20University%20of%20Medical%20Science-darkgreen)
+[![DOI](https://img.shields.io/badge/DOI-Zenodo-blue)](https://doi.org/10.5281/zenodo.20621294)
+![Affiliation](https://img.shields.io/badge/Affiliation-SUMS-darkgreen)
 ![Research](https://img.shields.io/badge/Research-BVLOS%20UAV%20Safety-blue)
 ![Standard](https://img.shields.io/badge/Standard-ISO%2026262-orange)
 ![ORCID](https://img.shields.io/badge/ORCID-0000--0003--4641--0112-a6ce39)
 
-> Reproducibility package accompanying the Risk-Aware AI Architecture for BVLOS UAV Safety (RASA), including architectural visualisations, risk-surface analysis, Monte Carlo scenario evaluation, and supporting metadata.
+> Reproducibility package accompanying the **Risk-Aware AI Architecture for BVLOS UAV Safety (RASA)**, including architectural visualisations, risk-surface analysis, Monte Carlo simulation results, graphical abstract assets, and supporting metadata.
 
-> Reproducibility package accompanying the Risk-Aware AI Architecture for BVLOS UAV Safety (RASA), including architectural visualisations, risk-surface analysis, Monte Carlo scenario evaluation, and supporting metadata.
+---
 
 ## Overview
 
-This repository provides the reproducibility package supporting the **Risk-Aware AI Architecture for BVLOS UAV Safety (RASA)**, a framework designed to quantify operational risk in Beyond Visual Line of Sight (BVLOS) Unmanned Aerial Vehicle (UAV) missions operating over satellite communication (SATCOM) networks.
+This repository provides the reproducibility package supporting the Risk-Aware AI Architecture for BVLOS UAV Safety (RASA), a framework designed to quantify operational risk in Beyond Visual Line of Sight (BVLOS) Unmanned Aerial Vehicle (UAV) missions operating over satellite communication (SATCOM) networks.
 
-RASA integrates sensor uncertainty, communication latency, and compound-failure interactions within an explainable rule-based decision architecture intended to support safety-critical autonomous operations.
+RASA integrates sensor uncertainty, communication latency, and compound-failure interactions within an explainable, rule-based decision architecture intended to support safety-critical autonomous operations.
+
 
 ---
 
