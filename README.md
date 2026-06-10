@@ -3,10 +3,12 @@
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue)
 ![Journal](https://img.shields.io/badge/Journal-MDPI%20Vehicles-green)
 ![DOI](https://img.shields.io/badge/DOI-Pending-lightgrey)
-![Affiliation](https://img.shields.io/badge/Affiliation-SUMS-darkgreen)
+![Affiliation](https://img.shields.io/badge/Affiliation-Shiga%20University%20of%20Medical%20Science-darkgreen)
 ![Research](https://img.shields.io/badge/Research-BVLOS%20UAV%20Safety-blue)
-![Standard](https://img.shields.io/badge/ISO-26262-orange)
-![ORCID](https://img.shields.io/badge/ORCID-0009--0006--5366--4978-a6ce39)
+![Standard](https://img.shields.io/badge/Standard-ISO%2026262-orange)
+![ORCID](https://img.shields.io/badge/ORCID-0000--0003--4641--0112-a6ce39)
+
+> Reproducibility package accompanying the Risk-Aware AI Architecture for BVLOS UAV Safety (RASA), including architectural visualisations, risk-surface analysis, Monte Carlo scenario evaluation, and supporting metadata.
 
 > Reproducibility package accompanying the Risk-Aware AI Architecture for BVLOS UAV Safety (RASA), including architectural visualisations, risk-surface analysis, Monte Carlo scenario evaluation, and supporting metadata.
 
