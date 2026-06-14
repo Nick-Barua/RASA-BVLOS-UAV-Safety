@@ -1,0 +1,98 @@
+========================================================================
+RASA FRAMEWORK: RISK QUANTIFICATION MODEL METADATA
+========================================================================
+Project Title: Risk-Aware AI Architecture for BVLOS UAV Safety (RASA)
+Author: Nick Barua
+Affiliation: AN Holdings Co.
+Publication Date: June 2026
+Version: v2.0.0
+
+1. CORE RISK EQUATION
+------------------------------------------------------------------------
+The Risk-Aware UAV Safety Architecture (RASA) quantifies instantaneous
+operational risk R(t) as a nonlinear weighted function:
+
+R(t) = α·U_sensor(t) + β·L_c,norm(t) + γ·U_sensor(t)·L_c,norm(t)
+
+Where:
+- R(t)         : Instantaneous operational risk at time t, R(t) ∈ [0, 1+γ]
+- U_sensor(t)  : Normalised sensor uncertainty from the Perception Layer,
+                 defined as the normalised trace of the posterior covariance
+                 matrix, U_sensor(t) ∈ [0, 1]
+- L_c,norm(t)  : Normalised communication latency from the Communication
+                 Layer, L_c,norm(t) = L_c(t) / L_max, L_c,norm(t) ∈ [0, 1]
+- α            : Primary weighting coefficient for sensor uncertainty
+- β            : Primary weighting coefficient for communication latency
+- γ            : Coupling coefficient modelling nonlinear compound failure
+                 interaction, 0 ≤ γ ≤ min(α, β)
+
+2. MODEL PARAMETERS
+------------------------------------------------------------------------
+Under nominal mission profiles, α + β ≤ 1, with α + β = 1 representing
+the standard operating configuration used in the baseline simulations.
+In compound-failure scenarios where neither subsystem individually
+dominates risk, α + β may be reduced below unity, with γ increased
+accordingly subject to 0 ≤ γ ≤ min(α, β).
+
+Simulation scenario parameters:
+  S1 Nominal:            α = 0.45, β = 0.45, γ = 0.10
+  S2 Sensor degradation: α = 0.45, β = 0.45, γ = 0.10
+  S3 Compound failure:   α = 0.40, β = 0.40, γ = 0.20
+
+Maximum tolerable latency: L_max = 1000 ms (EASA C2 link requirement)
+
+3. RISK STATE CLASSIFICATION
+------------------------------------------------------------------------
+Risk State  | R(t) Range  | System Response
+------------|-------------|------------------------------------------
+NOMINAL     | 0.00 – 0.30 | Autonomous mission execution
+ELEVATED    | 0.31 – 0.60 | Increased reporting; pre-position commands
+HIGH        | 0.61 – 0.85 | Station-keeping; return-to-launch initiated
+CRITICAL    | > 0.85      | Emergency contingency landing
+
+Boundaries are lower-inclusive (e.g. R(t) = 0.31 triggers ELEVATED).
+
+4. MATHEMATICAL PROPERTIES
+------------------------------------------------------------------------
+Property 1 - Monotonicity:
+∂R/∂U_sensor = α + γ·L_c,norm ≥ α > 0
+∂R/∂L_c,norm = β + γ·U_sensor ≥ β > 0
+
+Property 2 - Boundedness:
+For U_sensor, L_c,norm ∈ [0, 1]:
+R_max = α + β + γ
+
+Under the standard operating configuration where α + β = 1:
+R_max = 1 + γ
+
+For the scenarios evaluated in this study:
+S1: R_max = 1.10  (α + β = 0.90, γ = 0.10; R_max = α + β + γ = 1.10)
+S2: R_max = 1.10  (α + β = 0.90, γ = 0.10; R_max = α + β + γ = 1.10)
+S3: R_max = 1.00  (α + β = 0.80, γ = 0.20; R_max = α + β + γ = 1.00)
+
+Note: For S3, the reduced primary weights (α + β = 0.80) combined with
+the increased coupling coefficient (γ = 0.20) yield R_max = 1.00,
+preserving boundedness within the defined risk domain.
+
+Property 3 - Compound Failure Amplification:
+ΔR = γ·U_sensor·L_c,norm ≥ 0
+ΔR approaches γ as both inputs approach unity.
+
+5. SYSTEM NOVELTY
+------------------------------------------------------------------------
+Unlike conventional UAV safety frameworks that model perception
+uncertainty and communication degradation independently, RASA
+incorporates an explicit nonlinear coupling term (γ) that quantifies
+compound risk arising from simultaneous subsystem degradation, enabling
+integrated risk-aware decision support for BVLOS operations.
+
+6. IMPLEMENTATION NOTES
+------------------------------------------------------------------------
+- Coefficients α, β, and γ are mission-dependent and require calibration
+  against representative operational data prior to deployment.
+- Risk-state thresholds (NOMINAL / ELEVATED / HIGH / CRITICAL) are
+  configurable according to operator requirements and airspace class.
+- The present model supports architectural risk assessment and decision
+  support; it is not intended as evidence of regulatory compliance or
+  operational certification.
+========================================================================
