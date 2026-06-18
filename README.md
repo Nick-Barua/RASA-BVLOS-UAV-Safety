@@ -1,8 +1,8 @@
 # Risk-Aware UAV Safety Architecture (RASA) for BVLOS Operations
 
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
-![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20692686-blue)
-![Affiliation](https://img.shields.io/badge/Affiliation-Independent_Researcher-lightgrey)
+![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19200141-blue)
+![Affiliation](https://img.shields.io/badge/Affiliation-AN_Holdings_%26_SUMS-lightgrey)
 ![Research Standard](https://img.shields.io/badge/Research-Peer_Review_Submission-green)
 ![ORCID](https://img.shields.io/badge/ORCID-0009--0007--5779--9872-brightgreen)
 
@@ -131,6 +131,7 @@ A permanent archived version of this repository is available through Zenodo.
 **DOI: 10.5281/zenodo.20692686**
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20692686.svg)](https://doi.org/10.5281/zenodo.20692686)
+
 
 ---
 
